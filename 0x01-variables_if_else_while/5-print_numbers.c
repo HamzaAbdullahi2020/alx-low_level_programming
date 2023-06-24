@@ -1,10 +1,14 @@
 #include <stdio.h>
 /**
- * main - main block
+ * main - block
  * Return: 0
  */
 int main(void)
 {
-	printf("with proper grammar, but the outcome is a piece of art,\n");
+	int a = 0;
+
+	for (; a < 10 ; a++)
+		printf("%d", a);
+	putchar('\n');
 	return (0);
 }
