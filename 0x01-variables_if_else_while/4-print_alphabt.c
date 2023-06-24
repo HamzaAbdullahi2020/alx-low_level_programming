@@ -1,10 +1,20 @@
 #include <stdio.h>
 /**
- * main - main block
+ * main - block
  * Return: 0
  */
 int main(void)
 {
-	puts("\"Programming is like building a multilingual puzzle");
+	char a;
+
+	for (a = 'a'; a <= 'z' ; a++)
+	{
+		if (a == 'q' || a == 'e')
+		{
+			continue;
+		}
+		putchar(a);
+	}
+	putchar('\n');
 	return (0);
 }
