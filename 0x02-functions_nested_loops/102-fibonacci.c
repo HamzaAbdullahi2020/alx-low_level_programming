@@ -9,34 +9,24 @@
  * Return: Always 0 (Success)
 */
 
-#include <stdio.h>
-int main (void){
+int main(void)
+{
+	int count;
+	unsigned long fib1 = 0, fib2 = 1, sum;
 
-void printFibonacci(int n) {
-    int fib1 = 1; // First Fibonacci number
-    int fib2 = 2; // Second Fibonacci number
+	for (count = 0; count < 50; ++count)
+	{
+		sum = fib1 + fib2;
+		printf("%lu", sum);
 
-    // Print the first two Fibonacci numbers
-    printf("%d, %d, ", fib1, fib2);
+		fib1 = fib2;
+		fib2 = sum;
 
-    // Calculate and print the rest of the Fibonacci numbers
-    for (int i = 3; i <= n; i++) {
-        int fib3 = fib1 + fib2; // Calculate the next Fibonacci number
-        printf("%d", fib3);
+		if (count == 49)
+			printf("\n");
+		else
+			printf(","," ");
+	}
 
-        if (i < n) {
-            printf(", "); // Print comma and space if not the last number
-        }
-
-        fib1 = fib2; // Update fib1 to the next number in the sequence
-        fib2 = fib3; // Update fib2 to the next number in the sequence
-    }
-    printf("\n");
-}
-
-int main() {
-    int count = 50;
-    printFibonacci(count);
-    return 0;
-}
+	return (0);
 }
