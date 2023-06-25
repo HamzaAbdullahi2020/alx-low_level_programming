@@ -10,6 +10,7 @@
 */
 
 #include <stdio.h>
+int main (void){
 
 void printFibonacci(int n) {
     int fib1 = 1; // First Fibonacci number
@@ -38,4 +39,4 @@ int main() {
     printFibonacci(count);
     return 0;
 }
-
+}
