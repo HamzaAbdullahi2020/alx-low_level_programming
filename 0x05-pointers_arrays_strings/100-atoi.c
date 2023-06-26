@@ -30,22 +30,3 @@ int _atoi(char *s) {
     return result * sign;
 }
 
-int main() {
-    char str1[] = "12345";
-    char str2[] = "-98765";
-    char str3[] = "+42";
-    char str4[] = "abc123"; // No numbers, should return 0
-
-    int num1 = _atoi(str1);
-    int num2 = _atoi(str2);
-    int num3 = _atoi(str3);
-    int num4 = _atoi(str4);
-
-    printf("Number 1: %d\n", num1);
-    printf("Number 2: %d\n", num2);
-    printf("Number 3: %d\n", num3);
-    printf("Number 4: %d\n", num4);
-
-    return 0;
-}
-
