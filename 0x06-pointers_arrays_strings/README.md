@@ -1,1 +1,1 @@
-main.h
+2-strncpy.c
