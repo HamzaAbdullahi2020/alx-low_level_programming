@@ -1,38 +1,41 @@
+#include <stddef.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-char *rot13(char *str) {
-    char *ptr = str;
+/*
+ROT13 is a simple letter substitution cipher that replaces a letter with the letter thirteen(13) letters after it in the alphabet.
+ROT13 is an example of the Caesar cipher.
+This function takes a string and returns the string ciphered with Rot13. 
+If there are numbers or special characters included in the string, they returned as they are. 
+Only letters from the latin/english alphabet are shifted, like in the original Rot1.
+*/
 
-    while (*ptr) {
-        if ((*ptr >= 'a' && *ptr <= 'm') || (*ptr >= 'A' && *ptr <= 'M')) {
-            *ptr += 13;
-        } else if ((*ptr >= 'n' && *ptr <= 'z') || (*ptr >= 'N' && *ptr <= 'Z')) {
-            *ptr -= 13;
-        }
-        ptr++;
+char *rot13(const char *src)
+{
+    if(src == NULL){
+      return NULL;
     }
-
-    return str;
+  
+    char* result = malloc(strlen(src));
+    
+    if(result != NULL){
+      strcpy(result, src);
+      char* current_char = result;
+      
+      while(*current_char != '\0'){
+        //Only increment alphabet characters
+        if((*current_char >= 97 && *current_char <= 122) || (*current_char >= 65 && *current_char <= 90)){
+          if(*current_char > 109 || (*current_char > 77 && *current_char < 91)){
+            //Characters that wrap around to the start of the alphabet
+            *current_char -= 13;
+          }else{
+            //Characters that can be safely incremented
+            *current_char += 13;
+          }
+        }
+        current_char++;
+      }
+    }
+    return result;
 }
-
-int main(void) {
-    char s[] = "ROT13 (\"rotate by 13 places\", sometimes hyphenated ROT-13) is a simple letter substitution cipher.\n";
-    char *p;
-
-    p = rot13(s);
-    printf("%s", p);
-    printf("------------------------------------\n");
-    printf("%s", s);
-    printf("------------------------------------\n");
-    p = rot13(s);
-    printf("%s", p);
-    printf("------------------------------------\n");
-    printf("%s", s);
-    printf("------------------------------------\n");
-    p = rot13(s);
-    printf("%s", p);
-    printf("------------------------------------\n");
-    printf("%s", s);
-    return 0;
-}
-
