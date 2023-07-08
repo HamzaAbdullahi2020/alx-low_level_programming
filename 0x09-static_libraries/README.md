@@ -1,1 +1,1 @@
-main.o
+create_static_lib.sh
