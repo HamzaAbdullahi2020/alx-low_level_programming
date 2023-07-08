@@ -1,1 +1,1 @@
-liball.a
+main.o
