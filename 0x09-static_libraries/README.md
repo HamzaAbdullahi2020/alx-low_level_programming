@@ -1,1 +1,1 @@
-2-strchr.c
+1-strncat.o
