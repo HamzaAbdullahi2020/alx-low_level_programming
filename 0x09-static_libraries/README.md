@@ -1,1 +1,1 @@
-2-strncpy.c
+2-strlen.o
