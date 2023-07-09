@@ -1,1 +1,1 @@
-3-islower.c
+2-strncpy.o
