@@ -1,1 +1,1 @@
-3-strspn.c
+3-strcmp.o
