@@ -1,1 +1,1 @@
-3-strcmp.c
+3-puts.o
