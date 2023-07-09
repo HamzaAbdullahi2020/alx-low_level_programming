@@ -1,1 +1,1 @@
-0-strcat.o
+0-strcat.c
