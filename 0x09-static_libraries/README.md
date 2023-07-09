@@ -1,1 +1,1 @@
-6-abs.c
+5-strstr.o
