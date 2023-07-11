@@ -1,1 +1,1 @@
-main.h
+libmy.a
